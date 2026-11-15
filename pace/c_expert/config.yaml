@@ -1,0 +1,43 @@
+seed: 42
+esm:
+  checkpoint: esm2_t33_650M_UR50D
+  prefix_last_layer: 31
+lora:
+  last_n_layers: 2
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+  - query
+  - value
+cache:
+  esm_root: cache/esm_prefix
+  pythia_root: cache/pythia_residue
+data:
+  cache_mode: disk
+  rolling_ram_shards: 16
+  ram_safety_fraction: 0.2
+  num_workers: 2
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+  wt_aware_batching: true
+  length_bucket_width: 4
+training:
+  optimizer: Adam
+  lora_learning_rate: 1.0e-05
+  pythia_projection_learning_rate: 3.0e-05
+  wt_transformer_learning_rate: 1.0e-05
+  aa_predictor_learning_rate: 3.0e-05
+  esm_delta_learning_rate: 3.0e-05
+  final_mlp_learning_rate: 3.0e-05
+  weight_decay: 1.0e-05
+  dropout: 0.1
+  batch_size: 32
+  max_epochs: 200
+  patience: 10
+  minimum_epochs: 20
+  use_amp: false
+paths:
+  manifests_root: data/manifests
+  s669_csv: data/manifests/s669.csv.gz
