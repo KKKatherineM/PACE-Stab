@@ -22,9 +22,25 @@ Run the commands below from the repository root.
 
 ## Model weights
 
-PACE-trained checkpoints are stored in `checkpoints/P*/` and `checkpoints/C*/`.
-Keep `checkpoints/training_prior/` alongside them; it contains the small site
-fusion heads needed to initialize the P-expert.
+Download the [PACE-Stab checkpoint package from Google Drive](https://drive.google.com/file/d/19CYCCC1Y3fR6EX0DPkKK3y_Ib1Lw9-1V/view?usp=sharing).
+Extract it and place the `checkpoints/` directory directly inside the repository
+root. The resulting paths should include:
+
+```text
+checkpoints/P42/best_model_seed42.pt
+checkpoints/P2024/best_model_seed2024.pt
+checkpoints/P3407/best_model_seed3407.pt
+checkpoints/C42/best_model_seed42.pt
+checkpoints/C2024/best_model_seed2024.pt
+checkpoints/C3407/best_model_seed3407.pt
+checkpoints/training_prior/best_model_seed42.pt
+checkpoints/training_prior/best_model_seed2024.pt
+checkpoints/training_prior/best_model_seed3407.pt
+```
+
+The `training_prior/` files are small site fusion heads needed to initialize the
+P-expert. Keep them with the six model checkpoints. Checkpoint binaries are
+distributed separately and are not included in the Git repository.
 
 ESM2 and Pythia foundation weights are downloaded separately:
 
@@ -56,6 +72,9 @@ one ensemble member. Input format and structure preparation are described in
 
 The release includes the final filtered MegaScale splits, external benchmarks,
 G6PD/SNase inputs, and the PDB structures used for these samples.
+The [ProteinGym common97 application bundle](data/applications/proteingym97/README.md)
+contains the actual 97-assay experimental inputs, frozen DeepSequence/PACE
+scalar features, and saved train/test splits used for Fig. 6.
 Dataset counts, extraction instructions, label conventions, and original
 references are listed in [data/README.md](data/README.md).
 
