@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-11-15T17:41:21.442687+00:00",
+  "assays": 97,
+  "protein_identities": 79,
+  "complete_N_assays": 91,
+  "other_assays": 6,
+  "assay_variant_records": 381311,
+  "paired_configurations": 9440,
+  "split_archive_members": 13417,
+  "original_inputs_unchanged": true,
+  "exact_uncompressed_bytes_verified": true,
+  "uid_order_and_sequence_hashes_verified": true,
+  "scalar_feature_uid_order_verified": true,
+  "frozen_split_hashes_verified": true,
+  "split_archives_verified": true,
+  "performance_recomputed": false,
+  "models_loaded": false,
+  "training_or_inference": false,
+  "source_cohort_sha256": "4ba266930b86226aec5caa7610bf858d9ef5f0c6803b1d6909d67a980cda465e",
+  "figure_order_source_sha256": "8cad9a5d821986e050ab76ac2426f2b51fb5917c49c414a48abdbfad8af2bd34"
+}
